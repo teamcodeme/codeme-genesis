@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MessageCircle } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export function CtaSection() {
   return (
@@ -13,7 +13,6 @@ export function CtaSection() {
           className="relative overflow-hidden rounded-3xl glass-strong p-10 md:p-16 text-center"
           style={{ boxShadow: "var(--shadow-glow-cyan)" }}
         >
-          {/* radial glow */}
           <div
             className="absolute inset-0 opacity-70"
             style={{
@@ -26,31 +25,31 @@ export function CtaSection() {
 
           <div className="relative">
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-[var(--neon-lime)]">
-              // let's build
+              // your move
             </span>
             <h2 className="mt-3 font-display text-4xl font-bold tracking-tight md:text-6xl">
-              Ready to Build <br />
-              <span className="text-gradient">Something Powerful?</span>
+              Start Where You Are. <br />
+              <span className="text-gradient">Grow Where You Belong.</span>
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground md:text-lg">
-              Let Team CodeMe turn your idea into a professional digital product
-              built for growth.
+              Whether you have one project or zero, your journey with Team
+              CodeMe starts with a single application.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
               <a
-                href="#contact"
+                href="#apply"
                 className="group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-blue)] px-7 py-3.5 text-sm font-semibold text-background shadow-[0_0_30px_oklch(0.82_0.18_200/0.5)] transition-all hover:shadow-[0_0_55px_oklch(0.82_0.18_200/0.8)] hover:-translate-y-0.5"
               >
-                Book a Free Consultation
+                Apply to Join Team CodeMe
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="#contact"
+                href="#how"
                 className="inline-flex items-center gap-2 rounded-xl glass px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-[var(--neon-lime)]/40"
               >
-                <MessageCircle className="h-4 w-4 text-[var(--neon-lime)]" />
-                Contact Team CodeMe
+                <Sparkles className="h-4 w-4 text-[var(--neon-lime)]" />
+                See How It Works
               </a>
             </div>
           </div>

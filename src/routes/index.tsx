@@ -3,41 +3,44 @@ import { Toaster } from "@/components/ui/sonner";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { WhyUsSection } from "@/components/sections/WhyUsSection";
-import { ServicesSection } from "@/components/sections/ServicesSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
-import { ResultsSection } from "@/components/sections/ResultsSection";
-import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { WhoCanJoinSection } from "@/components/sections/WhoCanJoinSection";
+import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
+import { PaymentModelSection } from "@/components/sections/PaymentModelSection";
+import { LearnSection } from "@/components/sections/LearnSection";
+import { ExpectationsSection } from "@/components/sections/ExpectationsSection";
+import { GrowthPathSection } from "@/components/sections/GrowthPathSection";
+import { WhyJoinSection } from "@/components/sections/WhyJoinSection";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { ContactSection } from "@/components/sections/ContactSection";
+import { ApplySection } from "@/components/sections/ApplySection";
+import { FaqSection } from "@/components/sections/FaqSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Team CodeMe | Software Development, Websites & Business Automation" },
+      { title: "Join Team CodeMe | Developer Volunteer & Project-Based Opportunities" },
       {
         name: "description",
         content:
-          "Team CodeMe builds professional websites, web applications, ERP systems, dashboards, automations, and digital solutions that help businesses grow.",
+          "Join Team CodeMe as a beginner, volunteer, developer, designer, QA tester, or non-tech learner. Gain real project experience, grow with the team, and earn based on contribution and performance.",
       },
       {
         name: "keywords",
         content:
-          "software development, web development, ERP, business automation, dashboards, digital marketing, web applications, UI/UX design, Team CodeMe",
+          "join team codeme, developer volunteer, beginner developer opportunities, internship, project-based work, software learning, frontend backend QA UI UX, non-tech learner, contract developer, recruitment",
       },
-      { property: "og:title", content: "Team CodeMe | Build Smarter Digital Products" },
+      { property: "og:title", content: "Join Team CodeMe | Grow Through Real Projects" },
       {
         property: "og:description",
         content:
-          "We design and develop high-performing websites, business systems, and automations that help companies grow faster.",
+          "Volunteer, learn, and build real-world projects with Team CodeMe. Performance-based growth, contract opportunities, and future salary roles.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Team CodeMe — Build Smarter Digital Products" },
+      { name: "twitter:title", content: "Join Team CodeMe — Grow Through Real Projects" },
       {
         name: "twitter:description",
         content:
-          "Professional websites, web apps, ERP systems, automations, and digital marketing.",
+          "Beginner-friendly. Performance-based. Real projects. Apply to join Team CodeMe today.",
       },
     ],
   }),
@@ -50,13 +53,16 @@ function Index() {
       <Navbar />
       <main>
         <HeroSection />
-        <WhyUsSection />
-        <ServicesSection />
-        <ProcessSection />
-        <ResultsSection />
-        <ProjectsSection />
+        <WhoCanJoinSection />
+        <HowItWorksSection />
+        <PaymentModelSection />
+        <LearnSection />
+        <ExpectationsSection />
+        <GrowthPathSection />
+        <WhyJoinSection />
         <CtaSection />
-        <ContactSection />
+        <ApplySection />
+        <FaqSection />
       </main>
       <Footer />
       <Toaster />
