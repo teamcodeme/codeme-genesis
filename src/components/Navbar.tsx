@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo-teamcodeme.png";
 
 const links = [
   { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
+  { label: "Who Can Join", href: "#who" },
+  { label: "How It Works", href: "#how" },
+  { label: "Growth Path", href: "#growth" },
+  { label: "Apply", href: "#apply" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export function Navbar() {
@@ -31,25 +33,27 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
         <div
-          className={`flex items-center justify-between gap-6 rounded-2xl px-5 py-3 transition-all w-full ${
+          className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full ${
             scrolled ? "glass-strong" : "glass"
           }`}
         >
-          <a href="#home" className="flex items-center gap-2.5 group">
-            <div className="relative flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-[var(--neon-cyan)] to-[var(--neon-blue)] glow-cyan">
-              <Code2 className="h-5 w-5 text-background" strokeWidth={2.5} />
-            </div>
-            <div className="flex flex-col leading-none">
+          <a href="#home" className="flex items-center gap-3 group">
+            <img
+              src={logo}
+              alt="Team CodeMe logo"
+              className="h-10 w-auto object-contain drop-shadow-[0_0_12px_oklch(0.82_0.18_200/0.5)]"
+            />
+            <span className="hidden sm:flex flex-col leading-none">
               <span className="font-display text-base font-bold tracking-tight text-foreground">
                 Team <span className="text-gradient-primary">CodeMe</span>
               </span>
               <span className="font-mono text-[10px] text-muted-foreground">
-                {"<build smarter />"}
+                {"<join the team />"}
               </span>
-            </div>
+            </span>
           </a>
 
-          <nav className="hidden items-center gap-7 md:flex">
+          <nav className="hidden items-center gap-6 lg:flex">
             {links.map((l) => (
               <a
                 key={l.label}
@@ -57,21 +61,20 @@ export function Navbar() {
                 className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {l.label}
-                <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-lime)] transition-all duration-300 hover:w-full" />
               </a>
             ))}
           </nav>
 
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
+              href="#apply"
               className="hidden md:inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-blue)] px-5 py-2.5 text-sm font-semibold text-background shadow-[0_0_20px_oklch(0.82_0.18_200/0.4)] transition-all hover:shadow-[0_0_35px_oklch(0.82_0.18_200/0.6)] hover:-translate-y-0.5"
             >
-              Get Started
+              Apply Now
             </a>
             <button
               onClick={() => setOpen((v) => !v)}
-              className="md:hidden rounded-lg p-2 text-foreground"
+              className="lg:hidden rounded-lg p-2 text-foreground"
               aria-label="Toggle menu"
             >
               {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -84,7 +87,7 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden mx-5 mt-2 glass-strong rounded-2xl p-5 flex flex-col gap-4"
+          className="lg:hidden mx-5 mt-2 glass-strong rounded-2xl p-5 flex flex-col gap-4"
         >
           {links.map((l) => (
             <a
@@ -97,11 +100,11 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="#apply"
             onClick={() => setOpen(false)}
             className="rounded-xl bg-gradient-to-r from-[var(--neon-cyan)] to-[var(--neon-blue)] px-5 py-2.5 text-center text-sm font-semibold text-background"
           >
-            Get Started
+            Apply Now
           </a>
         </motion.div>
       )}
