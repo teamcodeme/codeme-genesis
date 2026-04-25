@@ -9,10 +9,12 @@ import { PaymentModelSection } from "@/components/sections/PaymentModelSection";
 import { LearnSection } from "@/components/sections/LearnSection";
 import { ExpectationsSection } from "@/components/sections/ExpectationsSection";
 import { GrowthPathSection } from "@/components/sections/GrowthPathSection";
+import { WhyUsSection } from "@/components/sections/WhyUsSection";
 import { WhyJoinSection } from "@/components/sections/WhyJoinSection";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { ApplySection } from "@/components/sections/ApplySection";
 import { FaqSection } from "@/components/sections/FaqSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -60,9 +62,11 @@ function Index() {
         <ExpectationsSection />
         <GrowthPathSection />
         <WhyJoinSection />
+        <WhyUsSection />
         <CtaSection />
         <ApplySection />
         <FaqSection />
+        <ContactSection />
       </main>
       <Footer />
       <Toaster />

@@ -1,15 +1,31 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import logo from "@/assets/logo-teamcodeme.png";
 
-const links = [
-  { label: "Home", href: "#home" },
-  { label: "Who Can Join", href: "#who" },
-  { label: "How It Works", href: "#how" },
-  { label: "Growth Path", href: "#growth" },
+const primaryLinks = [{ label: "Home", href: "#" }];
+
+const secondaryLinks = [
+  { label: "Why Us", href: "#why-us" },
   { label: "Apply", href: "#apply" },
   { label: "FAQ", href: "#faq" },
+  { label: "Contact Us", href: "#contact" },
+];
+
+const programGuideLinks = [
+  { label: "Who Can Join", href: "#who" },
+  { label: "How It Works", href: "#how" },
+  { label: "Payment Model", href: "#payment" },
+  { label: "What You Will Learn", href: "#learn" },
+  { label: "Expectations", href: "#expect" },
+  { label: "Growth Path", href: "#growth" },
+  { label: "Why Join", href: "#why" },
 ];
 
 export function Navbar() {
@@ -27,15 +43,13 @@ export function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled ? "py-3" : "py-5"
-      }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"
+        }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
         <div
-          className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full ${
-            scrolled ? "glass-strong" : "glass"
-          }`}
+          className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full ${scrolled ? "glass-strong" : "glass"
+            }`}
         >
           <a href="#home" className="flex items-center gap-3 group">
             <img
@@ -54,7 +68,34 @@ export function Navbar() {
           </a>
 
           <nav className="hidden items-center gap-6 lg:flex">
-            {links.map((l) => (
+            {primaryLinks.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                className="relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                {l.label}
+              </a>
+            ))}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="inline-flex items-center gap-1 text-sm font-medium text-muted-foreground outline-none transition-colors hover:text-foreground focus:text-foreground">
+                Program Guide
+                <ChevronDown className="h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="glass-strong min-w-56 border-border/70 p-2">
+                {programGuideLinks.map((l) => (
+                  <DropdownMenuItem key={l.label} asChild>
+                    <a
+                      href={l.href}
+                      className="cursor-pointer rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground focus:text-foreground"
+                    >
+                      {l.label}
+                    </a>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+            {secondaryLinks.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
@@ -89,7 +130,32 @@ export function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="lg:hidden mx-5 mt-2 glass-strong rounded-2xl p-5 flex flex-col gap-4"
         >
-          {links.map((l) => (
+          {primaryLinks.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground"
+            >
+              {l.label}
+            </a>
+          ))}
+          <div className="space-y-2">
+            <p className="text-sm font-medium text-foreground">Program Guide</p>
+            <div className="grid gap-2 pl-3">
+              {programGuideLinks.map((l) => (
+                <a
+                  key={l.label}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="text-sm font-medium text-muted-foreground hover:text-foreground"
+                >
+                  {l.label}
+                </a>
+              ))}
+            </div>
+          </div>
+          {secondaryLinks.map((l) => (
             <a
               key={l.label}
               href={l.href}

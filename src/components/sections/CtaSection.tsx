@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 export function CtaSection() {
   return (
-    <section className="relative py-24">
+    <section id="start" className="relative py-24">
       <div className="mx-auto max-w-6xl px-5">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

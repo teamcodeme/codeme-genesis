@@ -20,7 +20,7 @@ const items = [
 
 export function WhyUsSection() {
   return (
-    <section className="relative py-24">
+    <section id="why-us" className="relative py-24">
       <div className="mx-auto max-w-7xl px-5">
         <SectionHeader
           eyebrow="Why Choose Us"
