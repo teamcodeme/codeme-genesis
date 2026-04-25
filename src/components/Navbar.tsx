@@ -47,25 +47,28 @@ export function Navbar() {
         }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
-        <div
-          className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full ${scrolled ? "glass-strong" : "glass"
-            }`}
-        >
-          <a href="#home" className="flex items-center gap-3 group">
-            <img
-              src={logo}
-              alt="Team CodeMe logo"
-              className="h-10 w-auto object-contain drop-shadow-[0_0_12px_oklch(0.82_0.18_200/0.5)]"
-            />
-            <span className="hidden sm:flex flex-col leading-none">
-              <span className="font-display text-base font-bold tracking-tight text-foreground">
-                Team <span className="text-gradient-primary">CodeMe</span>
-              </span>
-              <span className="font-mono text-[10px] text-muted-foreground">
-                {"<join the team />"}
-              </span>
-            </span>
-          </a>
+         <div
+           className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full border border-[var(--neon-cyan)/15] ${scrolled ? "glass-strong" : "glass"
+             } ${scrolled ? "shadow-[0_0_30px_oklch(0.82_0.18_200/0.15)]" : "shadow-[0_0_20px_oklch(0.82_0.18_200/0.1)]"}`}
+         >
+           <a href="#home" className="flex items-center gap-3 group">
+             <div className="relative">
+               <img
+                 src={logo}
+                 alt="Team CodeMe logo"
+                 className="h-10 w-auto object-contain drop-shadow-[0_0_20px_oklch(0.82_0.18_200/0.6)] transition-all duration-300 group-hover:drop-shadow-[0_0_28px_oklch(0.82_0.18_200/0.8)]"
+               />
+               <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[var(--neon-cyan)/20] to-[var(--neon-blue)/20] opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"></div>
+             </div>
+             <span className="hidden sm:flex flex-col leading-none">
+               <span className="font-display text-base font-bold tracking-tight text-foreground">
+                 Team <span className="text-gradient-primary">CodeMe</span>
+               </span>
+               <span className="font-mono text-[10px] text-muted-foreground">
+                 {"<join the team />"}
+               </span>
+             </span>
+           </a>
 
           <nav className="hidden items-center gap-6 lg:flex">
             {primaryLinks.map((l) => (
