@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Sparkles, PlayCircle } from "lucide-react";
 import { ParticleField } from "@/components/ParticleField";
 import { Hero3D } from "@/components/Hero3D";
-import logo from "@/assets/logo-teamcodeme.png";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const badges = [
   "Real Project Experience",
@@ -15,10 +15,7 @@ const badges = [
 
 export function HeroSection() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen overflow-hidden pt-32 pb-20"
-    >
+    <section id="home" className="relative min-h-screen overflow-hidden pt-32 pb-20">
       <div className="absolute inset-0 grid-bg animate-grid" aria-hidden="true" />
       <div
         className="absolute inset-0"
@@ -46,22 +43,8 @@ export function HeroSection() {
             <span>Now accepting volunteer & contract contributors</span>
           </motion.div>
 
-          {/* Brand logo as identity element */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15 }}
-            className="mt-6 flex items-center gap-3"
-          >
-            <img
-              src={logo}
-              alt="Team CodeMe"
-              className="h-16 w-auto object-contain drop-shadow-[0_0_25px_oklch(0.86_0.22_145/0.45)]"
-            />
-            <span className="font-mono text-[11px] uppercase tracking-[0.25em] text-[var(--neon-cyan)]">
-              // recruitment.2025
-            </span>
-          </motion.div>
+          {/* Brand identity label */}
+          <BrandLogo size="lg" variant="hero-label" />
 
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-[64px]">
             Join Team CodeMe <br />
@@ -71,10 +54,9 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
-            Whether you are a beginner, volunteer, student, inexperienced
-            developer, or a non-tech learner with passion — Team CodeMe gives
-            you the opportunity to learn, contribute, and grow by working on
-            real digital projects.
+            Whether you are a beginner, volunteer, student, inexperienced developer, or a non-tech
+            learner with passion — Team CodeMe gives you the opportunity to learn, contribute, and
+            grow by working on real digital projects.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center gap-4">

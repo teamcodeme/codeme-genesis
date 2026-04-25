@@ -7,7 +7,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import logo from "@/assets/logo-teamcodeme.png";
+import { BrandLogo } from "@/components/BrandLogo";
 
 const primaryLinks = [{ label: "Home", href: "#" }];
 
@@ -43,32 +43,17 @@ export function Navbar() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "py-3" : "py-5"
-        }`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
+        scrolled ? "py-3" : "py-5"
+      }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5">
-         <div
-           className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full border border-[var(--neon-cyan)/15] ${scrolled ? "glass-strong" : "glass"
-             } ${scrolled ? "shadow-[0_0_30px_oklch(0.82_0.18_200/0.15)]" : "shadow-[0_0_20px_oklch(0.82_0.18_200/0.1)]"}`}
-         >
-           <a href="#home" className="flex items-center gap-3 group">
-             <div className="relative">
-               <img
-                 src={logo}
-                 alt="Team CodeMe logo"
-                 className="h-10 w-auto object-contain drop-shadow-[0_0_20px_oklch(0.82_0.18_200/0.6)] transition-all duration-300 group-hover:drop-shadow-[0_0_28px_oklch(0.82_0.18_200/0.8)]"
-               />
-               <div className="absolute -inset-1 rounded-full bg-gradient-to-tr from-[var(--neon-cyan)/20] to-[var(--neon-blue)/20] opacity-0 blur-sm transition-opacity duration-300 group-hover:opacity-100"></div>
-             </div>
-             <span className="hidden sm:flex flex-col leading-none">
-               <span className="font-display text-base font-bold tracking-tight text-foreground">
-                 Team <span className="text-gradient-primary">CodeMe</span>
-               </span>
-               <span className="font-mono text-[10px] text-muted-foreground">
-                 {"<join the team />"}
-               </span>
-             </span>
-           </a>
+        <div
+          className={`flex items-center justify-between gap-6 rounded-2xl px-4 py-2.5 transition-all w-full ${scrolled ? "glass-strong" : "glass"}`}
+        >
+          <a href="#home" className="flex items-center group">
+            <BrandLogo size="md" showText={true} showTagline={true} variant="nav" />
+          </a>
 
           <nav className="hidden items-center gap-6 lg:flex">
             {primaryLinks.map((l) => (
@@ -85,7 +70,10 @@ export function Navbar() {
                 Program Guide
                 <ChevronDown className="h-4 w-4" />
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="center" className="glass-strong min-w-56 border-border/70 p-2">
+              <DropdownMenuContent
+                align="center"
+                className="glass-strong min-w-56 border-border/70 p-2"
+              >
                 {programGuideLinks.map((l) => (
                   <DropdownMenuItem key={l.label} asChild>
                     <a
