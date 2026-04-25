@@ -1,26 +1,65 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { WhyUsSection } from "@/components/sections/WhyUsSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
+import { ResultsSection } from "@/components/sections/ResultsSection";
+import { ProjectsSection } from "@/components/sections/ProjectsSection";
+import { CtaSection } from "@/components/sections/CtaSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Team CodeMe | Software Development, Websites & Business Automation" },
+      {
+        name: "description",
+        content:
+          "Team CodeMe builds professional websites, web applications, ERP systems, dashboards, automations, and digital solutions that help businesses grow.",
+      },
+      {
+        name: "keywords",
+        content:
+          "software development, web development, ERP, business automation, dashboards, digital marketing, web applications, UI/UX design, Team CodeMe",
+      },
+      { property: "og:title", content: "Team CodeMe | Build Smarter Digital Products" },
+      {
+        property: "og:description",
+        content:
+          "We design and develop high-performing websites, business systems, and automations that help companies grow faster.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Team CodeMe — Build Smarter Digital Products" },
+      {
+        name: "twitter:description",
+        content:
+          "Professional websites, web apps, ERP systems, automations, and digital marketing.",
+      },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="relative min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <HeroSection />
+        <WhyUsSection />
+        <ServicesSection />
+        <ProcessSection />
+        <ResultsSection />
+        <ProjectsSection />
+        <CtaSection />
+        <ContactSection />
+      </main>
+      <Footer />
+      <Toaster />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
